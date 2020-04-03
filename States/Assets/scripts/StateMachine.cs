@@ -21,7 +21,7 @@ public class StateMachine
        
             currentState = newState;
             currentState.Enter();
-        
+        Debug.Log("changing state to: " + newState.GetType().ToString());
            
         
     }
@@ -29,5 +29,6 @@ public class StateMachine
     public void Update()
     {
         if (currentState != null) currentState.Execute();
+        
     }
 }
