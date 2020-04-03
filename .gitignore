@@ -60,3 +60,4 @@ crashlytics-build.properties
 
 *.log
 States/Library/shadercompiler-UnityShaderCompiler.exe0.log
+States/Temp/UnityLockfile
