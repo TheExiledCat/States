@@ -4,12 +4,13 @@
 ///Intended for educational use.////////////////////////////////
 ///Rights reserved under Academic Free License v3.0////////////
 //////////////////////////////////////////////////////////////
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMachine
 {
+    public event Action OnChangeState;
     public IState currentState;
     public IState prevState;
     public void ChangeState(IState newState)
@@ -22,7 +23,7 @@ public class StateMachine
             currentState = newState;
             currentState.Enter();
         Debug.Log("changing state to: " + newState.GetType().ToString());
-           
+        OnChangeState(); 
         
     }
 

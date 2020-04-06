@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 [RequireComponent(typeof(Rigidbody2D))]
-public class EnemyStateSystem : MonoBehaviour
+public class EnemyStateSystem : StateSystem
 {
     public  event Action Starting;
-    StateMachine smc = new StateMachine();
+    [HideInInspector]
+    
     public Dictionary<string, IState> states = new Dictionary<string, IState>();
     
     // Start is called before the first frame update
