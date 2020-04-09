@@ -26,5 +26,6 @@ public class EnemyStateSystem : StateSystem
     void Update()
     {
         smc.Update();
+
     }
 }

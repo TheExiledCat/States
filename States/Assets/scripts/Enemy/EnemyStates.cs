@@ -19,7 +19,7 @@ public class EnemyStates : MonoBehaviour
 
         print(e);
         //add states like this:
-        ess.states.Add("Wandering", new EnemyWandering(e.rb, e.patrolPoints[0], e.patrolPoints[1], e.speed));
-
+        ess.states.Add("Wandering", new EnemyWandering(e.rb, e.patrolPoints[0], e.patrolPoints[1], e.speed,e.visionRadius));
+        ess.states.Add("Chasing", new EnemyChasing(e.rb, GameObject.FindGameObjectWithTag("Player"), e.speed * 1.5f));
     }
 }

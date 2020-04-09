@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Vector3[] patrolPoints = new Vector3[2];
     public float speed;
+    public float visionRadius;
     // Start is called before the first frame update
     void Awake()
     {
