@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyChasing : IState
 {
     float speed;
-    GameObject target;
+    public GameObject target;
     Rigidbody2D rb;
     public EnemyChasing(Rigidbody2D _rb,GameObject _target,float _runspeed)
     {
-        speed = _runspeed;
+        speed = _runspeed/100;
         target = _target;
         rb = _rb;
     }
@@ -21,6 +21,7 @@ public class EnemyChasing : IState
     public void Execute()
     {
        rb.MovePosition( Vector2.MoveTowards(rb.position, target.transform.position, speed));
+        
     }
 
     public void Exit()

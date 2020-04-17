@@ -15,15 +15,20 @@ public class StateMachine
     public IState prevState;
     public void ChangeState(IState newState)
     {
-        if (currentState != null)
-            currentState.Exit();
-        prevState = currentState;
+        if (currentState != newState)
+        {
+            if (currentState != null)
+                currentState.Exit();
+            prevState = currentState;
 
-       
+
             currentState = newState;
             currentState.Enter();
-        Debug.Log("changing state to: " + newState.GetType().ToString());
-        OnChangeState(); 
+            Debug.Log("changing state to: " + newState.GetType().ToString());
+            OnChangeState();
+            return;
+        }
+        Debug.Log("ALREADY IN THIS STATE");
         
     }
 
